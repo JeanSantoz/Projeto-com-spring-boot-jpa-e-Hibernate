@@ -24,4 +24,8 @@ public class UserService {
         return x.get();
     }
 
+    public User insert(User user){
+        return repository.save(user);
+    }
+
 }
