@@ -93,12 +93,21 @@ public class Order implements Serializable{
         return items;
     }
 
+    
     public Payment getPayment() {
         return payment;
     }
 
     public void setPayment(Payment payment) {
         this.payment = payment;
+    }
+
+    public Double getTotal(){
+        double total = 0;
+        for(OrderItem i : items){
+            total += i.getSubTotal();
+        }
+        return total;
     }
 
     @Override

@@ -56,12 +56,16 @@ public class OrderItem implements Serializable {
         id.setOrder(order);
     }
     
-    public Product getOProduct(){
+    public Product getProduct(){
         return id.getProduct();
     }
 
     public void setOrder(Product product){
         id.setProduct(product);
+    }
+
+    public Double getSubTotal(){
+        return price * quantity;
     }
 
     @Override
@@ -87,6 +91,8 @@ public class OrderItem implements Serializable {
         } else if (!id.equals(other.id))
             return false;
         return true;
-    }   
+    }
+    
+    
     
 }
